@@ -2,7 +2,7 @@
 
 Submitted by: **Shanu Abrol**
 
-**Flixster2** is a movie browsing app that allows users to browse the popular people from the MovieDB and display
+**Flixster2** is a movie browsing app that allows users to browse the popular people from the MovieDB API and display
 what they are known for in a different activity.
 
 Time spent: **5** hours spent in total

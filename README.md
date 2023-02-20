@@ -39,6 +39,7 @@ GIF created with LICEcap
 ## Notes
 
 Describe any challenges encountered while building the app.
+Using Serializable to parse the JSON data was themost challanging part here.
 
 ## License
 

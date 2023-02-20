@@ -5,6 +5,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 
 private const val TAG = "DetailActivity"
 
@@ -26,12 +27,13 @@ class DetailActivity : AppCompatActivity() {
 
         val person = intent.getSerializableExtra(PERSON_EXTRA) as TopPeople
 
-        personName.text = person.personName
-        movieTitle.text = person.knownFor?.movieTitle
-        movieDesc.text = person.knownFor?.movieDesc
-//
-//        Glide.with(this)
-//            .load("https://image.tmdb.org/t/p/w500/"+person.knownFor?.get(0)?movieImage)
-//            .into(movieImage)
+        personName.text = "Name: "+person.personName
+        movieTitle.text = "Known For: "+person.bestKnownFor?.movieTitle
+        movieDesc.text = person.bestKnownFor?.movieDesc
+
+        Glide.with(this)
+            .load(person.bestKnownFor?.posterUrl)
+            .transform(RoundedCorners(100))
+            .into(movieImage)
     }
 }

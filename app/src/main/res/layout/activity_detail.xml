@@ -9,12 +9,13 @@
 
     <ImageView
         android:id="@+id/iv_movieImage"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="350dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
+
 
     <TextView
         android:id="@+id/tv_personName"
@@ -24,8 +25,9 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="10dp"
         android:text="Person Name"
+        android:textColor="#FF5722"
+        android:textSize="20dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title"
-        android:textColor="#000000"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,8 +41,9 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="10dp"
         android:text="Movie Name"
+        android:textSize="25dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
-        android:textColor="#000000"
+        android:textColor="#FF5722"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,6 +57,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="10dp"
         android:text="Movie Descripton"
+        android:textSize="17dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Subtitle"
         android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"

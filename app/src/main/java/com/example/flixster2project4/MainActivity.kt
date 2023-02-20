@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.codepath.asynchttpclient.AsyncHttpClient
@@ -38,6 +39,7 @@ class MainActivity : AppCompatActivity() {
             val dividerItemDecoration = DividerItemDecoration(this, it.orientation)
             peoplesRecyclerView.addItemDecoration(dividerItemDecoration)
         }
+        peoplesRecyclerView.layoutManager = GridLayoutManager(this, 2)
         val peopleAdapter = TopPeopleAdapter(this, people)
         peoplesRecyclerView.adapter = peopleAdapter
 
@@ -56,6 +58,7 @@ class MainActivity : AppCompatActivity() {
                     )
                     parsedJson.results?.let { list ->
                         people.addAll(list)
+                        //Log.i("PEOPLE LIST: ", people[0].bestKnownFor)
                         peopleAdapter.notifyDataSetChanged()
                     }
 

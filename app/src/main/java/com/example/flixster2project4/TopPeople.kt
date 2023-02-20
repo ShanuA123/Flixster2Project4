@@ -23,16 +23,19 @@ data class SearchResponse(
 @Serializable
 data class TopPeople(
     @SerialName("name")
-    var personName: String?,
+    val personName: String?,
 
     @SerialName("profile_path")
-    var personImage: String?=null,
+    val personImage: String?,
 
     // Known_for worked when it was List<KnownFor> ?
     @SerialName("known_for")
-    var knownFor: KnownFor?,
+    val knownFor: List<KnownFor>?,
 
-): java.io.Serializable
+): java.io.Serializable {
+    val bestKnownFor = knownFor?.get(0)
+    val imageUrl = "https://image.tmdb.org/t/p/w500/${personImage}"
+}
 
 @Keep
 @Serializable
@@ -41,12 +44,12 @@ data class KnownFor(
     var movieImage: String?,
 
     @SerialName("overview")
-    var movieDesc: String?,
+    val movieDesc: String?,
 
-    @SerialName("original_title")
-    var movieTitle: String?,
+    @SerialName("title")
+    var movieTitle: String? = null,
 
-    @SerialName("release_date")
-    var moveRelease: String?,
-): java.io.Serializable
+): java.io.Serializable{
+    val posterUrl = "https://image.tmdb.org/t/p/w500/${movieImage}"
+}
 
